@@ -1,25 +1,6 @@
-/*
- * File: jquery.flexisel.js
- * Version: 2.1.0
- * Description: Responsive carousel jQuery plugin
- * Author: 9bit Studios
- * Copyright 2016, 9bit Studios
- * http://www.9bitstudios.com
- * Free to use and abuse under the MIT license.
- * http://www.opensource.org/licenses/mit-license.php
- */
+(function ($) {
 
-/* =========================================================================
- *
- *  Creative-Tim Modifications:
- *  - line 112 and 115 we added Material Icons chevron_left and chevron_right
- * ==========================================================================
- */
-
-
-(function($) {
-
-  $.fn.flexisel = function(options) {
+  $.fn.flexisel = function (options) {
 
     var defaults = $.extend({
       visibleItems: 4,
@@ -72,8 +53,8 @@
 
     var methods = {
 
-      init: function() {
-        return this.each(function() {
+      init: function () {
+        return this.each(function () {
           methods.appendHTML();
           methods.setEventHandlers();
           methods.initializeItems();
@@ -84,13 +65,13 @@
       Initialize Items
       *******************************/
 
-      initializeItems: function() {
+      initializeItems: function () {
 
         var obj = settings.responsiveBreakpoints;
         for (var i in obj) {
           responsivePoints.push(obj[i]);
         }
-        responsivePoints.sort(function(a, b) {
+        responsivePoints.sort(function (a, b) {
           return a.changePoint - b.changePoint;
         });
         var childSet = object.children();
@@ -109,7 +90,7 @@
       Append HTML
       *******************************/
 
-      appendHTML: function() {
+      appendHTML: function () {
 
         object.addClass("nbs-flexisel-ul");
         object.wrap("<div class='nbs-flexisel-container'><div class='nbs-flexisel-inner'></div></div>");
@@ -136,13 +117,13 @@
       /******************************
       Set Event Handlers
       *******************************/
-      setEventHandlers: function() {
+      setEventHandlers: function () {
 
         var childSet = object.children();
 
-        $(window).on("resize", function(event) {
+        $(window).on("resize", function (event) {
           clearTimeout(resizeTimeout);
-          resizeTimeout = setTimeout(function() {
+          resizeTimeout = setTimeout(function () {
             methods.calculateDisplay();
             itemsWidth = methods.getCurrentItemWidth();
             childSet.width(itemsWidth);
@@ -162,11 +143,11 @@
 
         });
 
-        $(settings.navigationTargetSelector).find(".nbs-flexisel-nav-left").on("click", function(event) {
+        $(settings.navigationTargetSelector).find(".nbs-flexisel-nav-left").on("click", function (event) {
           methods.scroll(true);
         });
 
-        $(settings.navigationTargetSelector).find(".nbs-flexisel-nav-right").on("click", function(event) {
+        $(settings.navigationTargetSelector).find(".nbs-flexisel-nav-right").on("click", function (event) {
           methods.scroll(false);
         });
 
@@ -176,10 +157,10 @@
 
           if (settings.autoPlay.pauseOnHover === true) {
             object.on({
-              mouseenter: function() {
+              mouseenter: function () {
                 canNavigate = false;
               },
-              mouseleave: function() {
+              mouseleave: function () {
                 canNavigate = true;
               }
             });
@@ -196,7 +177,7 @@
       Calculate Display
       *******************************/
 
-      calculateDisplay: function() {
+      calculateDisplay: function () {
         var contentWidth = $('html').width();
         var largestCustom = responsivePoints[responsivePoints.length - 1].changePoint; // sorted array
 
@@ -224,7 +205,7 @@
       Scroll
       *******************************/
 
-      scroll: function(reverse) {
+      scroll: function (reverse) {
 
         if (typeof reverse === 'undefined') {
           reverse = true
@@ -245,14 +226,14 @@
             if (reverse) {
               object.animate({
                 'left': methods.calculateNonInfiniteLeftScroll(scrollDistance)
-              }, settings.animationSpeed, function() {
+              }, settings.animationSpeed, function () {
                 canNavigate = true;
               });
 
             } else {
               object.animate({
                 'left': methods.calculateNonInfiniteRightScroll(scrollDistance)
-              }, settings.animationSpeed, function() {
+              }, settings.animationSpeed, function () {
                 canNavigate = true;
               });
             }
@@ -262,7 +243,7 @@
           } else {
             object.animate({
               'left': reverse ? "+=" + itemsWidth * itemsToScroll : "-=" + itemsWidth * itemsToScroll
-            }, settings.animationSpeed, function() {
+            }, settings.animationSpeed, function () {
               canNavigate = true;
 
               if (reverse) {
@@ -286,11 +267,11 @@
 
         xDown: null,
         yDown: null,
-        handleTouchStart: function(evt) {
+        handleTouchStart: function (evt) {
           this.xDown = evt.touches[0].clientX;
           this.yDown = evt.touches[0].clientY;
         },
-        handleTouchMove: function(evt) {
+        handleTouchMove: function (evt) {
           if (!this.xDown || !this.yDown) {
             return;
           }
@@ -324,11 +305,11 @@
       Utility Functions
       *******************************/
 
-      getCurrentItemWidth: function() {
+      getCurrentItemWidth: function () {
         return (object.parent().width()) / itemsVisible;
       },
 
-      offsetItemsToBeginning: function(number) {
+      offsetItemsToBeginning: function (number) {
         if (typeof number === 'undefined') {
           number = 1
         }
@@ -337,7 +318,7 @@
         }
       },
 
-      offsetItemsToEnd: function(number) {
+      offsetItemsToEnd: function (number) {
         if (typeof number === 'undefined') {
           number = 1
         }
@@ -346,7 +327,7 @@
         }
       },
 
-      offsetSliderPosition: function(reverse) {
+      offsetSliderPosition: function (reverse) {
         var left = parseInt(object.css('left').replace('px', ''));
         if (reverse) {
           left = left - itemsWidth * itemsToScroll;
@@ -358,11 +339,11 @@
         });
       },
 
-      getOffsetPosition: function() {
+      getOffsetPosition: function () {
         return parseInt(object.css('left').replace('px', ''));
       },
 
-      calculateNonInfiniteLeftScroll: function(toScroll) {
+      calculateNonInfiniteLeftScroll: function (toScroll) {
 
         methods.clearDisabled();
         if (methods.getOffsetPosition() + toScroll >= 0) {
@@ -373,7 +354,7 @@
         }
       },
 
-      calculateNonInfiniteRightScroll: function(toScroll) {
+      calculateNonInfiniteRightScroll: function (toScroll) {
 
         methods.clearDisabled();
         var negativeOffsetLimit = (itemCount * itemsWidth) - (itemsVisible * itemsWidth);
@@ -386,15 +367,15 @@
         }
       },
 
-      setAutoplayInterval: function() {
-        autoPlayInterval = setInterval(function() {
+      setAutoplayInterval: function () {
+        autoPlayInterval = setInterval(function () {
           if (canNavigate) {
             methods.scroll(false);
           }
         }, settings.autoPlay.interval);
       },
 
-      clearDisabled: function() {
+      clearDisabled: function () {
         var parent = $(settings.navigationTargetSelector);
         parent.find(".nbs-flexisel-nav-left").removeClass('disabled');
         parent.find(".nbs-flexisel-nav-right").removeClass('disabled');

@@ -29,6 +29,56 @@
     <!-- CSS Just for demo purpose, don't include it in your project -->
     <link href="./assets/demo/demo.css" rel="stylesheet" />
     <link href="./assets/demo/vertical-nav.css" rel="stylesheet" />
+
+    <style>
+      .page-header1 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 70vh;
+        background-color: #105ed8;
+        background-image: url("./assets/img1/bn-小4.png");
+        background-size: contain;
+        background-position: center 150px; /* 手機版：圖片置頂 */
+        background-repeat: no-repeat;
+      }
+
+      h1.title {
+        margin-bottom: 20px;
+        margin-top: 350px;
+        font-size: 42px;
+      }
+
+      .btnRegRow {
+        text-align: -webkit-center;
+      }
+
+      .containerTop {
+        margin: auto;
+      }
+
+      @media (min-width: 1650px) {
+        .page-header1 {
+          flex-direction: row;
+          justify-content: flex-start;
+          background-position: right center; /* 電腦版：圖片置右 */
+        }
+
+        h1.title {
+          margin: 10px;
+          font-size: auto;
+        }
+
+        .btnRegRow {
+          text-align: left;
+        }
+
+        .containerTop {
+          margin-left: 0;
+        }
+      }
+    </style>
   </head>
 
   <body class="index-page sidebar-collapse">
@@ -70,76 +120,100 @@
         <div class="collapse navbar-collapse">
           <ul class="navbar-nav ml-auto">
             <li class="dropdown nav-item">
-              <a onclick="window.location.href = 'index.html'" href="#" class="nav-link" data-toggle="dropdown"> 首頁 </a>
+              <a
+                onclick="window.location.href = 'index.html'"
+                href="#"
+                class="nav-link"
+                data-toggle="dropdown"
+              >
+                首頁
+              </a>
             </li>
             <li class="dropdown nav-item">
-              <a onclick="window.location.href = 'about.html'" href="#" class="nav-link" data-toggle="dropdown"> 關於我們 </a>
+              <a
+                onclick="window.location.href = 'about.html'"
+                href="#"
+                class="nav-link"
+                data-toggle="dropdown"
+              >
+                關於我們
+              </a>
             </li>
             <li class="dropdown nav-item">
-              <a onclick="window.location.href = 'trade.html'" href="#" class="nav-link" data-toggle="dropdown"> 交易 </a>
+              <a
+                onclick="window.location.href = 'trade.html'"
+                href="#"
+                class="nav-link"
+                data-toggle="dropdown"
+              >
+                交易
+              </a>
             </li>
             <li class="dropdown nav-item">
               <a href="#" class="nav-link" data-toggle="dropdown"> 常見問題 </a>
             </li>
             <li class="button-container nav-item iframe-extern">
-              <a
-                href=""
-                target="_blank"
-              >
-                <img  style="
-                border-radius: 0;
-                box-shadow: none;
-                width: 40px;
-                max-width: 40px;
-                max-height: 40px;
-                pointer-events: none;
-                " src="./assets/img1/素材_FB Icon.png" />                 
+              <a href="" target="_blank">
+                <img
+                  style="
+                    border-radius: 0;
+                    box-shadow: none;
+                    width: 40px;
+                    max-width: 40px;
+                    max-height: 40px;
+                    pointer-events: none;
+                  "
+                  src="./assets/img1/素材_FB Icon.png"
+                />
               </a>
             </li>
             <li class="button-container nav-item iframe-extern">
-              <a
-                href=""
-                target="_blank"
-              >
-                <img  style="
-                border-radius: 0;
-                box-shadow: none;
-                width: 40px;
-                max-width: 40px;
-                max-height: 40px;
-                pointer-events: none;
-                " src="./assets/img1/素材_IG Icon.png" />                 
+              <a href="" target="_blank">
+                <img
+                  style="
+                    border-radius: 0;
+                    box-shadow: none;
+                    width: 40px;
+                    max-width: 40px;
+                    max-height: 40px;
+                    pointer-events: none;
+                  "
+                  src="./assets/img1/素材_IG Icon.png"
+                />
               </a>
             </li>
             <li class="button-container nav-item iframe-extern">
-              <a
-                href=""
-                target="_blank"
-              >
-                <img  style="
-                border-radius: 0;
-                box-shadow: none;
-                width: 40px;
-                max-width: 40px;
-                max-height: 40px;
-                pointer-events: none;
-                " src="./assets/img1/素材_M.png" />                 
+              <a href="" target="_blank">
+                <img
+                  style="
+                    border-radius: 0;
+                    box-shadow: none;
+                    width: 40px;
+                    max-width: 40px;
+                    max-height: 40px;
+                    pointer-events: none;
+                  "
+                  src="./assets/img1/素材_M.png"
+                />
               </a>
             </li>
             <li class="button-container nav-item iframe-extern">
               <a
                 target="_blank"
                 onclick="window.location.href = 'login.html'"
-                href="#" 
+                href="#"
               >
-                <img  style="
-                border-radius: 0;
-                box-shadow: none;
-                width: 40px;
-                max-width: 40px;
-                max-height: 40px;
-                pointer-events: none;
-                " src="./assets/img1/素材_登入 Icon.png" />                 
+                <img
+                  style="
+                    border-radius: 0;
+                    box-shadow: none;
+                    width: 40px;
+                    max-width: 40px;
+                    max-height: 40px;
+                    pointer-events: none;
+                  "
+                  src="./assets/img1/素材_登入 Icon.png"
+                />
               </a>
             </li>
           </ul>
@@ -147,292 +221,323 @@
       </div>
     </nav>
 
-    <!-- <div
-      class="page-header"
-      data-parallax="true"
-      style="background-image: url('./assets/img1/素材_新平台歡迎註冊.png');height: 55vh"
-    >
-    </div> -->
-
     <div class="main main-raised">
       <div class="cd-section" id="features">
-        <div
-          class="page-header"
-          data-parallax="true"
-          style="
-            background-image: url('./assets/img1/素材_新平台歡迎註冊.png');
-            height: 70vh;
-          "
-        ></div>
-        <div class="row" style="height: 150px">
+        <div class="page-header page-header1" data-parallax="true">
+          <div class="container containerTop">
+            <div class="row btnRegRow">
+              <div class="col-md-8 ml-auto mr-auto">
+                <h1 class="title">新平台歡迎註冊</h1>
+              </div>
+            </div>
+            <div class="row btnRegRow">
+              <div class="col-md-8 ml-auto mr-auto">
+                <button
+                  class="btn btn-primary btn-round"
+                  style="
+                    margin-left: 10px;
+                    background-color: #ffffff;
+                    border-color: #ffffff;
+                    color: #105ed8;
+                    font-weight: bold;
+                    font-size: 13px;
+                  "
+                >
+                  註冊會員
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row" style="height: 150px"></div>
+      <div class="container">
+        <!--     *********     我們的服務     *********      -->
+        <div class="team-1" id="team-1">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-8 ml-auto mr-auto text-center">
+                <h2 class="title">我們的服務</h2>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-4">
+                <div class="card card-profile card-plain">
+                  <div
+                    class="card-header card-avatar"
+                    style="
+                      border-radius: 0;
+                      box-shadow: none;
+                      width: 250px;
+                      max-width: 250px;
+                      max-height: 250px;
+                      pointer-events: none;
+                    "
+                  >
+                    <a href="#pablo">
+                      <img class="img" src="./assets/img1/素材_理財.png" />
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="card card-profile card-plain">
+                  <div
+                    class="card-header card-avatar"
+                    style="
+                      border-radius: 0;
+                      box-shadow: none;
+                      width: 250px;
+                      max-width: 250px;
+                      max-height: 250px;
+                      pointer-events: none;
+                    "
+                  >
+                    <a href="#pablo">
+                      <img class="img" src="./assets/img1/素材_投資.png" />
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="card card-profile card-plain">
+                  <div
+                    class="card-header card-avatar"
+                    style="
+                      border-radius: 0;
+                      box-shadow: none;
+                      width: 250px;
+                      max-width: 250px;
+                      max-height: 250px;
+                      pointer-events: none;
+                    "
+                  >
+                    <a href="#pablo">
+                      <img class="img" src="./assets/img1/素材_交易.png" />
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--     *********    END 我們的服務      *********      -->
+
+        <!--     *********     三步驟，開始體驗交易      *********      -->
+        <div class="features-3">
+          <div class="row">
+            <div class="col-md-6">
+              <div class="phone-container">
+                <img src="./assets/img1/素材_Phone.png" />
+              </div>
+            </div>
+            <div class="col-md-6">
+              <!-- Some <br /> tags to push the text to align with the image, you can remove it if you have more text on the right side :-) -->
+              <h2 class="title" style="margin-bottom: 25px">
+                三步驟，開始體驗交易
+              </h2>
+              <div class="info info-horizontal">
+                <div class="icon icon-primary">
+                  <i class="material-icons" style="color: #ffd400">extension</i>
+                </div>
+                <div class="description">
+                  <h4 class="info-title">填寫資料</h4>
+                </div>
+              </div>
+              <div class="info info-horizontal">
+                <div class="icon icon-primary">
+                  <i class="material-icons" style="color: #ffd400"
+                    >watch_later</i
+                  >
+                </div>
+                <div class="description">
+                  <h4 class="info-title">預約驗證</h4>
+                </div>
+              </div>
+              <div class="info info-horizontal">
+                <div class="icon icon-primary">
+                  <i class="material-icons" style="color: #ffd400"
+                    >child_friendly</i
+                  >
+                </div>
+                <div class="description">
+                  <h4 class="info-title">開始交易</h4>
+                </div>
+              </div>
+              <div class="info info-horizontal">
+                <div class="row" style="margin-top: 20px; margin: 0">
+                  <button
+                    class="btn btn-primary btn-round"
+                    style="
+                      background-color: #ffd400;
+                      border-color: #ffd400;
+                      color: black;
+                      font-weight: bold;
+                      font-size: 13px;
+                    "
+                  >
+                    開始交易
+                  </button>
+                  <button
+                    class="btn btn-primary btn-round"
+                    style="
+                      margin-left: 10px;
+                      background-color: #ffd400;
+                      border-color: #ffd400;
+                      color: black;
+                      font-weight: bold;
+                      font-size: 13px;
+                    "
+                  >
+                    了解更多
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--     *********    END 三步驟，開始體驗交易      *********      -->
+      </div>
+      <!--     *********     法遵夥伴      *********      -->
+      <div
+        class="features-5"
+        style="background-image: url('./assets/img/examples/card-project4.jpg')"
+      >
+        <div class="col-md-8 ml-auto mr-auto text-center">
+          <h2 class="title">法遵夥伴</h2>
+          <h5 class="title">
+            BITSHA與全球領先用戶實名驗證和反洗錢技術夥伴合作，保護用戶資產與個資，並遵循法規與監管。
+          </h5>
         </div>
         <div class="container">
-          <!--     *********     我們的服務     *********      -->
-          <div class="team-1" id="team-1">
-            <div class="container">
-              <div class="row">
-                <div class="col-md-8 ml-auto mr-auto text-center">
-                  <h2 class="title">我們的服務</h2>
+          <div class="row">
+            <div class="col-sm-4">
+              <div class="info" style="min-height: 230px; padding: 30px 0 30px">
+                <div class="icon">
+                  <i class="material-icons">dashboard</i>
                 </div>
+                <h4 class="info-title">XX律師事務所</h4>
+                <p>全台灣最專業的虛擬貨幣律師事務所</p>
               </div>
-              <div class="row">
-                <div class="col-md-4">
-                  <div class="card card-profile card-plain">
-                    <div
-                      class="card-header card-avatar"
-                      style="
-                        border-radius: 0;
-                        box-shadow: none;
-                        width: 250px;
-                        max-width: 250px;
-                        max-height: 250px;
-                        pointer-events: none;
-                      "
-                    >
-                      <a href="#pablo">
-                        <img class="img" src="./assets/img1/素材_理財.png" />
-                      </a>
-                    </div>
-                  </div>
+            </div>
+            <div class="col-sm-4">
+              <div class="info" style="min-height: 230px; padding: 30px 0 30px">
+                <div class="icon">
+                  <i class="material-icons">dashboard</i>
                 </div>
-                <div class="col-md-4">
-                  <div class="card card-profile card-plain">
-                    <div
-                      class="card-header card-avatar"
-                      style="
-                        border-radius: 0;
-                        box-shadow: none;
-                        width: 250px;
-                        max-width: 250px;
-                        max-height: 250px;
-                        pointer-events: none;
-                      "
-                    >
-                      <a href="#pablo">
-                        <img class="img" src="./assets/img1/素材_投資.png" />
-                      </a>
-                    </div>
-                  </div>
+                <h4 class="info-title">XX律師事務所</h4>
+                <p>全台灣最專業的虛擬貨幣律師事務所</p>
+              </div>
+            </div>
+            <div class="col-sm-4">
+              <div class="info" style="min-height: 230px; padding: 30px 0 30px">
+                <div class="icon">
+                  <i class="material-icons">dashboard</i>
                 </div>
-                <div class="col-md-4">
-                  <div class="card card-profile card-plain">
-                    <div
-                      class="card-header card-avatar"
-                      style="
-                        border-radius: 0;
-                        box-shadow: none;
-                        width: 250px;
-                        max-width: 250px;
-                        max-height: 250px;
-                        pointer-events: none;
-                      "
-                    >
-                      <a href="#pablo">
-                        <img class="img" src="./assets/img1/素材_交易.png" />
-                      </a>
-                    </div>
-                  </div>
-                </div>
+                <h4 class="info-title">XX律師事務所</h4>
+                <p>全台灣最專業的虛擬貨幣律師事務所</p>
               </div>
             </div>
           </div>
-          <!--     *********    END 我們的服務      *********      -->
-
-          <!--     *********     三步驟，開始體驗交易      *********      -->
-          <div class="features-3">
-            <div class="row">
-              <div class="col-md-6">
-                <div class="phone-container">
-                  <img src="./assets/img1/素材_Phone.png" />
+          <div class="row">
+            <div class="col-sm-4">
+              <div class="info" style="min-height: 230px; padding: 30px 0 30px">
+                <div class="icon">
+                  <i class="material-icons">dashboard</i>
                 </div>
-              </div>
-              <div class="col-md-6">
-                <!-- Some <br /> tags to push the text to align with the image, you can remove it if you have more text on the right side :-) -->
-                <h2 class="title" style="margin-bottom: 25px;">三步驟，開始體驗交易</h2>
-                <div class="info info-horizontal">
-                  <div class="icon icon-primary">
-                    <i class="material-icons" style="color: #FFD400;">extension</i>
-                  </div>
-                  <div class="description">
-                    <h4 class="info-title">填寫資料</h4>
-                  </div>
-                </div>
-                <div class="info info-horizontal">
-                  <div class="icon icon-primary">
-                    <i class="material-icons" style="color: #FFD400;">watch_later</i>
-                  </div>
-                  <div class="description">
-                    <h4 class="info-title">預約驗證</h4>
-                  </div>
-                </div>
-                <div class="info info-horizontal">
-                  <div class="icon icon-primary">
-                    <i class="material-icons" style="color: #FFD400;">child_friendly</i>
-                  </div>
-                  <div class="description">
-                    <h4 class="info-title">開始交易</h4>
-                  </div>
-                </div>
-                <div class="info info-horizontal">
-                  <div class="row" style="margin-top: 20px;margin: 0;">
-                    <button class="btn btn-primary btn-round" 
-                    style="background-color: #FFD400; border-color: #FFD400;color:black;font-weight: bold;
-                    font-size: 13px;">開始交易</button>
-                    <button class="btn btn-primary btn-round"
-                    style="margin-left: 10px;background-color: #FFD400; border-color: #FFD400;color:black;font-weight: bold;
-                    font-size: 13px;">了解更多</button>
-                  </div>
-                </div>
+                <h4 class="info-title">XX律師事務所</h4>
+                <p>全台灣最專業的虛擬貨幣律師事務所</p>
               </div>
             </div>
-          </div>
-          <!--     *********    END 三步驟，開始體驗交易      *********      -->
-        </div>
-        <!--     *********     法遵夥伴      *********      -->
-        <div
-          class="features-5"
-          style="
-            background-image: url('./assets/img/examples/card-project4.jpg');
-          "
-        >
-          <div class="col-md-8 ml-auto mr-auto text-center">
-            <h2 class="title">法遵夥伴</h2>
-            <h5 class="title">
-              BITSHA與全球領先用戶實名驗證和反洗錢技術夥伴合作，保護用戶資產與個資，並遵循法規與監管。
-            </h5>
-          </div>
-          <div class="container">
-            <div class="row">
-              <div class="col-sm-4">
-                <div class="info" style="min-height:230px;padding: 30px 0 30px;">
-                  <div class="icon">
-                    <i class="material-icons">dashboard</i>
-                  </div>
-                  <h4 class="info-title">XX律師事務所</h4>
-                  <p>全台灣最專業的虛擬貨幣律師事務所</p>
+            <div class="col-sm-4">
+              <div class="info" style="min-height: 230px; padding: 30px 0 30px">
+                <div class="icon">
+                  <i class="material-icons">dashboard</i>
                 </div>
-              </div>
-              <div class="col-sm-4">
-                <div class="info" style="min-height:230px;padding: 30px 0 30px;">
-                  <div class="icon">
-                    <i class="material-icons">dashboard</i>
-                  </div>
-                  <h4 class="info-title">XX律師事務所</h4>
-                  <p>全台灣最專業的虛擬貨幣律師事務所</p>
-                </div>
-              </div>
-              <div class="col-sm-4">
-                <div class="info" style="min-height:230px;padding: 30px 0 30px;">
-                  <div class="icon">
-                    <i class="material-icons">dashboard</i>
-                  </div>
-                  <h4 class="info-title">XX律師事務所</h4>
-                  <p>全台灣最專業的虛擬貨幣律師事務所</p>
-                </div>
+                <h4 class="info-title">XX律師事務所</h4>
+                <p>全台灣最專業的虛擬貨幣律師事務所</p>
               </div>
             </div>
-            <div class="row">
-              <div class="col-sm-4">
-                <div class="info" style="min-height:230px;padding: 30px 0 30px;">
-                  <div class="icon">
-                    <i class="material-icons">dashboard</i>
-                  </div>
-                  <h4 class="info-title">XX律師事務所</h4>
-                  <p>全台灣最專業的虛擬貨幣律師事務所</p>
+            <div class="col-sm-4">
+              <div class="info" style="min-height: 230px; padding: 30px 0 30px">
+                <div class="icon">
+                  <i class="material-icons">dashboard</i>
                 </div>
-              </div>
-              <div class="col-sm-4">
-                <div class="info" style="min-height:230px;padding: 30px 0 30px;">
-                  <div class="icon">
-                    <i class="material-icons">dashboard</i>
-                  </div>
-                  <h4 class="info-title">XX律師事務所</h4>
-                  <p>全台灣最專業的虛擬貨幣律師事務所</p>
-                </div>
-              </div>
-              <div class="col-sm-4">
-                <div class="info" style="min-height:230px;padding: 30px 0 30px;">
-                  <div class="icon">
-                    <i class="material-icons">dashboard</i>
-                  </div>
-                  <h4 class="info-title">XX律師事務所</h4>
-                  <p>全台灣最專業的虛擬貨幣律師事務所</p>
-                </div>
+                <h4 class="info-title">XX律師事務所</h4>
+                <p>全台灣最專業的虛擬貨幣律師事務所</p>
               </div>
             </div>
           </div>
         </div>
-        <!--     *********    END 法遵夥伴      *********      -->
-
-        <!--     *********    BIG WHITE FOOTER V2     *********      -->
-        <footer class="footer footer-black footer-big">
-          <div class="container">
-            <div class="content">
-              <div class="row">
-                <div class="col-md-4">
-                  <a href="#pablo">
-                    <h3>BITSHA</h3>
-                  </a>
-                </div>
-                <div class="col-md-2">
-                  <a href="#pablo"> <h5>關於我們</h5> </a>
-                </div>
-                <div class="col-md-2">
-                  <h5>交易頁面</h5>
-                  <ul class="links-vertical">
-                    <li>
-                      <a href="#pablo"> 幣種、數量選擇 </a>
-                    </li>
-                    <li>
-                      <a href="#pablo"> 支付頁面 </a>
-                    </li>
-                  </ul>
-                </div>
-                <div class="col-md-2">
-                  <a href="#pablo"> <h5>會員註冊</h5> </a>
-                </div>
-                <div class="col-md-2">
-                  <a href="#pablo"> <h5>常見問題</h5> </a>
-                </div>                
-              </div>
-            </div>
-            <hr />
-            <ul class="social-buttons">
-              <li>
-                <a href="#pablo" class="btn btn-just-icon btn-link btn-twitter">
-                  <i class="fa fa-twitter"></i>
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#pablo"
-                  class="btn btn-just-icon btn-link btn-facebook"
-                >
-                  <i class="fa fa-facebook-square"></i>
-                </a>
-              </li>
-              <li>
-                <a href="#pablo" class="btn btn-just-icon btn-link btn-google">
-                  <i class="fa fa-google-plus"></i>
-                </a>
-              </li>
-              <li>
-                <a href="#pablo" class="btn btn-just-icon btn-link btn-youtube">
-                  <i class="fa fa-youtube-play"></i>
-                </a>
-              </li>
-            </ul>
-            <div class="copyright pull-center">
-              Copyright &#xA9;
-              <script>
-                document.write(new Date().getFullYear());
-              </script>
-              made by BITSHA.
-            </div>
-          </div>
-        </footer>
-        <!--     *********   END BIG WHITE FOOTER v2     *********      -->
       </div>
+      <!--     *********    END 法遵夥伴      *********      -->
+
+      <!--     *********    BIG WHITE FOOTER V2     *********      -->
+      <footer class="footer footer-black footer-big">
+        <div class="container">
+          <div class="content">
+            <div class="row">
+              <div class="col-md-4">
+                <a href="#pablo">
+                  <h3>BITSHA</h3>
+                </a>
+              </div>
+              <div class="col-md-2">
+                <a href="#pablo"> <h5>關於我們</h5> </a>
+              </div>
+              <div class="col-md-2">
+                <h5>交易頁面</h5>
+                <ul class="links-vertical">
+                  <li>
+                    <a href="#pablo"> 幣種、數量選擇 </a>
+                  </li>
+                  <li>
+                    <a href="#pablo"> 支付頁面 </a>
+                  </li>
+                </ul>
+              </div>
+              <div class="col-md-2">
+                <a href="#pablo"> <h5>會員註冊</h5> </a>
+              </div>
+              <div class="col-md-2">
+                <a href="#pablo"> <h5>常見問題</h5> </a>
+              </div>
+            </div>
+          </div>
+          <hr />
+          <ul class="social-buttons">
+            <li>
+              <a href="#pablo" class="btn btn-just-icon btn-link btn-twitter">
+                <i class="fa fa-twitter"></i>
+              </a>
+            </li>
+            <li>
+              <a href="#pablo" class="btn btn-just-icon btn-link btn-facebook">
+                <i class="fa fa-facebook-square"></i>
+              </a>
+            </li>
+            <li>
+              <a href="#pablo" class="btn btn-just-icon btn-link btn-google">
+                <i class="fa fa-google-plus"></i>
+              </a>
+            </li>
+            <li>
+              <a href="#pablo" class="btn btn-just-icon btn-link btn-youtube">
+                <i class="fa fa-youtube-play"></i>
+              </a>
+            </li>
+          </ul>
+          <div class="copyright pull-center">
+            Copyright &#xA9;
+            <script>
+              document.write(new Date().getFullYear());
+            </script>
+            made by BITSHA.
+          </div>
+        </div>
+      </footer>
+      <!--     *********   END BIG WHITE FOOTER v2     *********      -->
+    </div>
     <!--   Core JS Files   -->
     <script
       src="./assets/js/core/jquery.min.js"

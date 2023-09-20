@@ -247,6 +247,7 @@
                         </div>
                         <input
                           type="text"
+                          id="nameZh"
                           class="form-control"
                           placeholder="..."
                         />
@@ -266,6 +267,7 @@
                         </div>
                         <input
                           type="text"
+                          id="nameEn"
                           class="form-control"
                           placeholder="..."
                         />
@@ -282,12 +284,13 @@
                     <div class="form-group">
                       <div class="input-group">
                         <div class="input-group-prepend">
-                          <span class="input-group-text"> 電子郵件: </span>
+                          <span class="input-group-text"> 手機號碼: </span>
                         </div>
                         <input
                           type="text"
+                          id="phoneNumber"
                           class="form-control"
-                          placeholder="Email..."
+                          placeholder="Phone..."
                         />
                       </div>
                     </div>
@@ -306,8 +309,8 @@
                         </div>
                         <select
                           class="form-control"
-                          name="choice-button"
-                          id="choice-button"
+                          name="country"
+                          id="country"
                           placeholder="Language"
                         >
                           <option value="Choice 1" selected>中華民國</option>
@@ -329,6 +332,7 @@
                         </div>
                         <input
                           type="text"
+                          id="nationId"
                           class="form-control"
                           placeholder="..."
                         />
@@ -349,6 +353,7 @@
                         </div>
                         <input
                           type="text"
+                          id="contractAddress"
                           class="form-control"
                           placeholder="..."
                         />
@@ -369,6 +374,7 @@
                         </div>
                         <input
                           type="text"
+                          id="residenceAddress"
                           class="form-control"
                           placeholder="..."
                         />
@@ -383,6 +389,7 @@
                       <a
                         href="#pablo"
                         class="btn btn-primary btn-round"
+                        id="copyAddressButton"
                         style="
                           background-color: #004793;
                           font-size: 12px;
@@ -406,8 +413,8 @@
                         </div>
                         <select
                           class="form-control"
-                          name="choice-button"
-                          id="choice-button"
+                          name="careerStatus"
+                          id="careerStatus"
                           placeholder="Language"
                         >
                           <option value="Choice 1" selected>雇主</option>
@@ -436,8 +443,8 @@
                         </div>
                         <select
                           class="form-control"
-                          name="choice-button"
-                          id="choice-button"
+                          name="annualIncome"
+                          id="annualIncome"
                           placeholder="Language"
                         >
                           <option value="Choice 1" selected>30萬以下</option>
@@ -463,6 +470,7 @@
                         </div>
                         <input
                           type="text"
+                          id="industryType"
                           class="form-control"
                           placeholder="..."
                         />
@@ -480,6 +488,7 @@
                         </div>
                         <input
                           type="text"
+                          id="jobTitle"
                           class="form-control"
                           placeholder="..."
                         />
@@ -497,8 +506,8 @@
                         </div>
                         <select
                           class="form-control"
-                          name="choice-button"
-                          id="choice-button"
+                          name="registrationPurpose"
+                          id="registrationPurpose"
                           placeholder="Language"
                         >
                           <option value="Choice 1" selected>挖礦</option>
@@ -525,8 +534,8 @@
                         </div>
                         <select
                           class="form-control"
-                          name="choice-button"
-                          id="choice-button"
+                          name="sourceOfFunds"
+                          id="sourceOfFunds"
                           placeholder="Language"
                         >
                           <option value="Choice 1" selected>薪資</option>
@@ -555,6 +564,7 @@
                         </div>
                         <input
                           type="text"
+                          id="estimatedMonthlyAmount"
                           class="form-control"
                           placeholder="..."
                         />
@@ -579,7 +589,7 @@
                         <form
                           action="/file-upload"
                           class="form-control dropzone"
-                          id="dropzone"
+                          id="frontIdCardImg"
                         >
                           <div class="dz-message" data-dz-message>
                             <span>上傳正面</span>
@@ -599,7 +609,7 @@
                       <form
                         action="/file-upload"
                         class="form-control dropzone"
-                        id="dropzone2"
+                        id="backIdCardImg"
                       >
                         <div class="dz-message" data-dz-message>
                           <span>上傳反面</span>
@@ -624,6 +634,7 @@
                         </div>
                         <input
                           type="text"
+                          id="bankName"
                           class="form-control"
                           placeholder="..."
                         />
@@ -641,6 +652,7 @@
                         </div>
                         <input
                           type="text"
+                          id="bankAccount"
                           class="form-control"
                           placeholder="..."
                         />
@@ -680,7 +692,7 @@
                         <form
                           action="/file-upload"
                           class="form-control dropzone"
-                          id="dropzone"
+                          id="bankBookImg"
                         >
                           <div class="dz-message" data-dz-message>
                             <span>上傳檔案</span>
@@ -706,6 +718,7 @@
                         </div>
                         <input
                           type="text"
+                          id="swiftBic"
                           class="form-control"
                           placeholder="..."
                         />
@@ -730,6 +743,7 @@
                         </div>
                         <input
                           type="text"
+                          id="referrerUid"
                           class="form-control"
                           placeholder="..."
                         />
@@ -748,7 +762,18 @@
                       style="justify-content: center"
                     >
                       <div class="text-center">
-                        <a
+                        <button
+                          id="submitKycButton"
+                          class="btn btn-primary btn-round"
+                          style="
+                            background-color: #004793;
+                            font-size: 32px;
+                            padding: 22px 45px;
+                          "
+                        >
+                          申請驗證
+                        </button>
+                        <!-- <a
                           href="#pablo"
                           class="btn btn-primary btn-round"
                           style="
@@ -757,7 +782,7 @@
                             padding: 22px 45px;
                           "
                           >申請驗證</a
-                        >
+                        > -->
                       </div>
                     </div>
                   </div>
@@ -985,18 +1010,179 @@
     <script src="./assets/js/plugins/dropzone.min.js"></script>
     <script>
       Dropzone.autoDiscover = false;
-      var drop = document.getElementById("dropzone");
-      var myDropzone = new Dropzone(drop, {
+      var frontIdCardImg = document.getElementById("frontIdCardImg");
+      var myDropzone1 = new Dropzone(frontIdCardImg, {
         url: "/file/post",
         addRemoveLinks: true,
       });
 
-      var drop2 = document.getElementById("dropzone2");
-      var myDropzone = new Dropzone(drop2, {
+      var backIdCardImg = document.getElementById("backIdCardImg");
+      var myDropzone2 = new Dropzone(backIdCardImg, {
+        url: "/file/post",
+        addRemoveLinks: true,
+      });
+
+      var bankBookImg = document.getElementById("bankBookImg");
+      var myDropzone3 = new Dropzone(bankBookImg, {
         url: "/file/post",
         addRemoveLinks: true,
       });
     </script>
+
+    <script>
+      function getCustomerUID() {
+        let uid = "";
+        const storedUid = localStorage.getItem("uid");
+        if (storedUid) {
+          uid = storedUid;
+          console.log(`Stored UID is ${storedUid}`);
+        } else {
+          console.log("No UID found in localStorage.");
+        }
+        return uid;
+      }
+    </script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const submitKycButton = document.getElementById("submitKycButton");
+
+        submitKycButton.addEventListener("click", async function () {
+          // 獲取表單上的所有數據
+          const annualIncome = document.getElementById("annualIncome").value;
+          const backIdCardImg = ""; //TODO 需確認上傳路徑
+          const bankAccount = document.getElementById("bankAccount").value;
+          const bankBookImg = ""; //TODO 需確認上傳路徑
+          const bankName = document.getElementById("bankName").value;
+          const contractAddress =
+            document.getElementById("contractAddress").value;
+          const country = document.getElementById("country").value;
+          const customerID = Number(getCustomerUID()); //TODO 需確認是否有取到
+
+          const estimatedMonthlyAmount = document.getElementById(
+            "estimatedMonthlyAmount"
+          ).value;
+          const frontIdCardImg = ""; //TODO 需確認上傳路徑
+          const industryType = document.getElementById("industryType").value;
+          const jobTitle = document.getElementById("jobTitle").value;
+          const nameEn = document.getElementById("nameEn").value;
+          const nameZh = document.getElementById("nameZh").value;
+          const nationId = document.getElementById("nationId").value;
+          const referrerUid = Number(
+            document.getElementById("referrerUid").value
+          );
+          const registrationPurpose = document.getElementById(
+            "registrationPurpose"
+          ).value;
+          const residenceAddress =
+            document.getElementById("residenceAddress").value;
+          const sourceOfFunds = document.getElementById("sourceOfFunds").value;
+          const swiftBic = document.getElementById("swiftBic").value;
+          //TODO phoneNumber
+
+          // 檢查所有必填欄位
+          const fields = [
+            "annualIncome",
+            "backIdCardImg",
+            "bankAccount",
+            "bankBookImg",
+            "bankName",
+            "contractAddress",
+            "country",
+            "customerID",
+            "estimatedMonthlyAmount",
+            "frontIdCardImg",
+            "industryType",
+            "jobTitle",
+            "nameEn",
+            "nameZh",
+            "nationId",
+            "registrationPurpose",
+            "residenceAddress",
+            "sourceOfFunds",
+            "swiftBic",
+          ];
+          let isValid = true;
+
+          for (const field of fields) {
+            const value = document.getElementById(field).value;
+
+            if (value === null || value === undefined || value === "") {
+              isValid = false;
+              alert(`The field ${field} must be filled out.`);
+              break;
+            }
+          }
+          if (!isValid) {
+            alert("請填寫所有必填");
+            return;
+          }
+
+          //
+          // 整理數據
+          const kycData = {
+            annual_income: annualIncome,
+            back_id_card_img: backIdCardImg,
+            bank_account: bankAccount,
+            bank_book_img: bankBookImg,
+            bank_name: bankName,
+            contract_address: contractAddress,
+            country: country,
+            customerID: customerID,
+            estimated_average_monthly_transaction_amount:
+              estimatedMonthlyAmount,
+            front_id_card_img: frontIdCardImg,
+            industry_type: industryType,
+            job_title: jobTitle,
+            name_en: nameEn,
+            name_zh: nameZh,
+            nation_id: nationId,
+            referrer_uid: referrerUid,
+            registration_purpose: registrationPurpose,
+            residence_address: residenceAddress,
+            source_of_transaction_funds: sourceOfFunds,
+            swift_bic: swiftBic,
+          };
+
+          // 發起 POST 請求
+          const response = await fetch(
+            "http://127.0.0.1:8480/service/registry_kyc",
+            {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify(kycData),
+            }
+          );
+
+          // 檢查 Response 狀態
+          if (response.status === 201) {
+            // 成功的處理，可以是導向到其他頁面或顯示成功信息
+            console.log("KYC form successfully submitted.");
+          } else {
+            // 失敗的處理，例如顯示錯誤信息
+            console.log("Failed to submit KYC form.");
+          }
+        });
+      });
+    </script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const copyAddressButton = document.getElementById("copyAddressButton");
+
+        copyAddressButton.addEventListener("click", function () {
+          const residenceAddressInput =
+            document.getElementById("residenceAddress");
+          const contractAddressInput =
+            document.getElementById("contractAddress");
+
+          residenceAddressInput.value = contractAddressInput.value;
+        });
+      });
+    </script>
+
     <!-- <nav id="cd-vertical-nav">
       <ul>
         <li>

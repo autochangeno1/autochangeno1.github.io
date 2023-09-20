@@ -237,7 +237,7 @@
               <div class="card-body">
                 <div class="row">
                   <div
-                    class="col-md-6 mr-auto"
+                    class="col-md-10 mr-auto"
                     style="margin-left: auto !important"
                   >
                     <div class="form-group">
@@ -249,13 +249,19 @@
                         </div>
                         <input
                           type="text"
+                          id="usernameInput"
                           class="form-control"
-                          placeholder="姓名..."
+                          placeholder="用戶名..."
                         />
+                        <!-- 用戶名驗證提示 -->
+                        <div
+                          id="usernameValidationText"
+                          style="color: red"
+                        ></div>
                       </div>
                     </div>
                   </div>
-                  <div
+                  <!-- <div
                     class="col-md-6 mr-auto"
                     style="margin-left: auto !important"
                   >
@@ -273,47 +279,134 @@
                         />
                       </div>
                     </div>
+                  </div> -->
+                </div>
+                <div class="row">
+                  <div
+                    class="col-md-6 mr-auto"
+                    style="margin-left: auto !important"
+                  >
+                    <div class="form-group">
+                      <div class="input-group">
+                        <div class="input-group-prepend">
+                          <span class="input-group-text">
+                            <i class="material-icons">mail</i>
+                          </span>
+                        </div>
+                        <input
+                          type="text"
+                          id="emailInput"
+                          class="form-control"
+                          placeholder="Email..."
+                        />
+                        <!-- Email 驗證提示 -->
+                        <div id="emailValidationText" style="color: red"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="col-md-6 mr-auto"
+                    style="margin-left: auto !important"
+                  >
+                    <div class="form-group">
+                      <div class="input-group">
+                        <div class="input-group-prepend">
+                          <span class="input-group-text">
+                            <i class="material-icons">people</i>
+                          </span>
+                        </div>
+                        <input
+                          type="text"
+                          id="remarkInput"
+                          class="form-control"
+                          placeholder="推薦人..."
+                        />
+                      </div>
+                    </div>
                   </div>
                 </div>
                 <div class="row">
+                  <!-- <form class="form" method="" action=""> -->
+                  <div
+                    class="col-md-6 mr-auto"
+                    style="margin-left: auto !important"
+                  >
+                    <div class="form-group">
+                      <div class="input-group">
+                        <div class="input-group-prepend">
+                          <span class="input-group-text">
+                            <i class="material-icons">password</i>
+                          </span>
+                        </div>
+                        <input
+                          type="password"
+                          id="passwordInput"
+                          class="form-control"
+                          placeholder="密碼..."
+                        />
+                      </div>
+                      <!-- 密碼驗證提示 -->
+                      <div id="passwordMatchText" style="color: red"></div>
+                    </div>
+                  </div>
+                  <div
+                    class="col-md-6 mr-auto"
+                    style="margin-left: auto !important"
+                  >
+                    <div class="form-group">
+                      <div class="input-group">
+                        <div class="input-group-prepend">
+                          <span class="input-group-text">
+                            <i class="material-icons">password</i>
+                          </span>
+                        </div>
+                        <input
+                          type="password"
+                          id="confirmPasswordInput"
+                          class="form-control"
+                          placeholder="密碼確認..."
+                        />
+                        <!-- 密碼強度提示 -->
+                        <div id="passwordStrengthText" style="color: red"></div>
+                      </div>
+                    </div>
+                  </div>
                   <div
                     class="col-md-12 mr-auto"
                     style="margin-left: auto !important"
                   >
-                    <form class="form" method="" action="">
-                      <div class="form-group">
-                        <div class="input-group">
-                          <div class="input-group-prepend">
-                            <span class="input-group-text">
-                              <i class="material-icons">mail</i>
-                            </span>
-                          </div>
-                          <input
-                            type="text"
-                            class="form-control"
-                            placeholder="Email..."
-                          />
-                        </div>
+                    <div
+                      class="row responsive-login"
+                      style="justify-content: center"
+                    >
+                      <!-- <div class="text-center">
+                        <a
+                          href="registerKYC.html"
+                          class="btn btn-primary btn-round"
+                          style="
+                            background-color: #004793;
+                            font-size: 32px;
+                            padding: 22px 45px;
+                          "
+                          >註冊</a
+                        >
+                      </div> -->
+                      <div class="text-center">
+                        <button
+                          id="registerButton"
+                          class="btn btn-primary btn-round"
+                          style="
+                            background-color: #004793;
+                            font-size: 32px;
+                            padding: 22px 45px;
+                          "
+                        >
+                          註冊
+                        </button>
                       </div>
-                      <div
-                        class="row responsive-login"
-                        style="justify-content: center"
-                      >
-                        <div class="text-center">
-                          <a
-                            href="registerKYC.html"
-                            class="btn btn-primary btn-round"
-                            style="
-                              background-color: #004793;
-                              font-size: 32px;
-                              padding: 22px 45px;
-                            "
-                            >註冊</a
-                          >
-                        </div>
-                      </div>
-                    </form>
+                    </div>
                   </div>
+                  <!-- </form> -->
                 </div>
                 <div class="row"></div>
               </div>
@@ -525,6 +618,136 @@
 
         // Sliders Init
         materialKit.initSliders();
+      });
+    </script>
+
+    <script>
+      // 檢查密碼是否匹配
+      function checkPasswordMatch(
+        passwordInput,
+        confirmPasswordInput,
+        passwordMatchText
+      ) {
+        if (passwordInput.value !== confirmPasswordInput.value) {
+          passwordMatchText.textContent = "兩次輸入的密碼不相符";
+        } else {
+          passwordMatchText.textContent = "";
+        }
+      }
+
+      // 檢查密碼強度
+      function checkPasswordStrength(passwordInput, passwordStrengthText) {
+        const password = passwordInput.value;
+        const hasUpperCase = /[A-Z]/.test(password);
+        const hasLowerCase = /[a-z]/.test(password);
+        const hasNumbers = /\d/.test(password);
+        const hasValidLength = password.length >= 8;
+
+        if (hasUpperCase && hasLowerCase && hasNumbers && hasValidLength) {
+          passwordStrengthText.textContent = "";
+        } else {
+          passwordStrengthText.textContent =
+            "密碼強度不足，密碼必須同時包涵大小寫英文以及數字，並且大於八位字元";
+        }
+      }
+
+      // 檢查 Email 是否合格
+      function checkEmailValidation(emailInput, emailValidationText) {
+        const email = emailInput.value;
+        const regex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+        if (!regex.test(email)) {
+          emailValidationText.textContent = "不是一個有效的 Email 地址";
+        } else {
+          emailValidationText.textContent = "";
+        }
+      }
+
+      // 檢查用戶名是否合格
+      function checkUsernameValidation(usernameInput, usernameValidationText) {
+        const username = usernameInput.value;
+        const regex = /^[a-zA-Z0-9!@#$%^&*()_+,\.-]+$/;
+        if (!regex.test(username)) {
+          usernameValidationText.textContent =
+            "用戶名不能包含中文或其他不允許的字元";
+        } else {
+          usernameValidationText.textContent = "";
+        }
+      }
+
+      async function registerUser() {
+        const username = document.getElementById("usernameInput").value;
+        const email = document.getElementById("emailInput").value;
+        const remark = document.getElementById("remarkInput").value;
+        const password = document.getElementById("passwordInput").value;
+
+        const data = {
+          email,
+          password,
+          remark,
+          username,
+        };
+
+        const response = await fetch(
+          "http://127.0.0.1:8480//service/registry_account",
+          {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(data),
+          }
+        );
+
+        const responseData = await response.json();
+        console.log(responseData);
+      }
+
+      document.addEventListener("DOMContentLoaded", function () {
+        const registerButton = document.getElementById("registerButton");
+        const passwordInput = document.getElementById("passwordInput");
+        const confirmPasswordInput = document.getElementById(
+          "confirmPasswordInput"
+        );
+        const passwordMatchText = document.getElementById("passwordMatchText");
+        const passwordStrengthText = document.getElementById(
+          "passwordStrengthText"
+        );
+
+        const emailInput = document.getElementById("emailInput");
+        const usernameInput = document.getElementById("usernameInput");
+        const emailValidationText = document.getElementById(
+          "emailValidationText"
+        );
+        const usernameValidationText = document.getElementById(
+          "usernameValidationText"
+        );
+
+        passwordInput.addEventListener("input", function () {
+          checkPasswordMatch(
+            passwordInput,
+            confirmPasswordInput,
+            passwordMatchText
+          );
+          checkPasswordStrength(passwordInput, passwordStrengthText);
+        });
+
+        confirmPasswordInput.addEventListener("input", function () {
+          checkPasswordMatch(
+            passwordInput,
+            confirmPasswordInput,
+            passwordMatchText
+          );
+        });
+
+        emailInput.addEventListener("input", function () {
+          checkEmailValidation(emailInput, emailValidationText);
+        });
+
+        usernameInput.addEventListener("input", function () {
+          checkUsernameValidation(usernameInput, usernameValidationText);
+        });
+
+        registerButton.addEventListener("click", registerUser);
       });
     </script>
     <!-- <nav id="cd-vertical-nav">

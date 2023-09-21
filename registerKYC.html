@@ -313,10 +313,10 @@
                           id="country"
                           placeholder="Language"
                         >
-                          <option value="Choice 1" selected>中華民國</option>
-                          <option value="Choice 2">馬來西亞</option>
-                          <option value="Choice 3">日本</option>
-                          <option value="Choice 4">美國</option>
+                          <option value="中華民國" selected>中華民國</option>
+                          <option value="馬來西亞">馬來西亞</option>
+                          <option value="日本">日本</option>
+                          <option value="美國">美國</option>
                         </select>
                       </div>
                     </div>
@@ -417,17 +417,17 @@
                           id="careerStatus"
                           placeholder="Language"
                         >
-                          <option value="Choice 1" selected>雇主</option>
-                          <option value="Choice 2">正職</option>
-                          <option value="Choice 3">兼職</option>
-                          <option value="Choice 4">家管</option>
-                          <option value="Choice 4">退休</option>
-                          <option value="Choice 4">待業</option>
-                          <option value="Choice 4">幣商</option>
-                          <option value="Choice 4">打工</option>
-                          <option value="Choice 4">臨時工</option>
-                          <option value="Choice 4">派遣</option>
-                          <option value="Choice 4">其他</option>
+                          <option value="雇主" selected>雇主</option>
+                          <option value="正職">正職</option>
+                          <option value="兼職">兼職</option>
+                          <option value="家管">家管</option>
+                          <option value="退休">退休</option>
+                          <option value="待業">待業</option>
+                          <option value="幣商">幣商</option>
+                          <option value="打工">打工</option>
+                          <option value="臨時工">臨時工</option>
+                          <option value="派遣">派遣</option>
+                          <option value="其他">其他</option>
                         </select>
                       </div>
                     </div>
@@ -447,11 +447,11 @@
                           id="annualIncome"
                           placeholder="Language"
                         >
-                          <option value="Choice 1" selected>30萬以下</option>
-                          <option value="Choice 2">30萬~60萬</option>
-                          <option value="Choice 3">60萬~100萬</option>
-                          <option value="Choice 4">100萬~200萬</option>
-                          <option value="Choice 4">200萬以上</option>
+                          <option value="30萬以下" selected>30萬以下</option>
+                          <option value="30萬~60萬">30萬~60萬</option>
+                          <option value="60萬~100萬">60萬~100萬</option>
+                          <option value="100萬~200萬">100萬~200萬</option>
+                          <option value="200萬以上">200萬以上</option>
                         </select>
                       </div>
                     </div>
@@ -510,12 +510,12 @@
                           id="registrationPurpose"
                           placeholder="Language"
                         >
-                          <option value="Choice 1" selected>挖礦</option>
-                          <option value="Choice 2">繼承/贈與</option>
-                          <option value="Choice 3">投資</option>
-                          <option value="Choice 4">搬磚</option>
-                          <option value="Choice 4">買賣</option>
-                          <option value="Choice 5">儲蓄</option>
+                          <option value="挖礦" selected>挖礦</option>
+                          <option value="繼承/贈與">繼承/贈與</option>
+                          <option value="投資">投資</option>
+                          <option value="搬磚">搬磚</option>
+                          <option value="買賣">買賣</option>
+                          <option value="儲蓄">儲蓄</option>
                         </select>
                       </div>
                     </div>
@@ -538,15 +538,15 @@
                           id="sourceOfFunds"
                           placeholder="Language"
                         >
-                          <option value="Choice 1" selected>薪資</option>
-                          <option value="Choice 2">營業收入</option>
-                          <option value="Choice 3">投資所得</option>
-                          <option value="Choice 4">租金</option>
-                          <option value="Choice 4">繼承/贈與</option>
-                          <option value="Choice 5">買家委託</option>
-                          <option value="Choice 5">存款</option>
-                          <option value="Choice 5">退休金</option>
-                          <option value="Choice 5">其他</option>
+                          <option value="薪資" selected>薪資</option>
+                          <option value="營業收入">營業收入</option>
+                          <option value="投資所得">投資所得</option>
+                          <option value="租金">租金</option>
+                          <option value="繼承/贈與">繼承/贈與</option>
+                          <option value="買家委託">買家委託</option>
+                          <option value="存款">存款</option>
+                          <option value="退休金">退休金</option>
+                          <option value="其他">其他</option>
                         </select>
                       </div>
                     </div>
@@ -1050,27 +1050,32 @@
         submitKycButton.addEventListener("click", async function () {
           // 獲取表單上的所有數據
           const annualIncome = document.getElementById("annualIncome").value;
-          const backIdCardImg = ""; //TODO 需確認上傳路徑
+          const backIdCardImg = "backIdCardImg"; //TODO 需確認上傳路徑
           const bankAccount = document.getElementById("bankAccount").value;
-          const bankBookImg = ""; //TODO 需確認上傳路徑
+          const bankBookImg = "bankBookImg"; //TODO 需確認上傳路徑
           const bankName = document.getElementById("bankName").value;
           const contractAddress =
             document.getElementById("contractAddress").value;
           const country = document.getElementById("country").value;
           const customerID = Number(getCustomerUID()); //TODO 需確認是否有取到
 
+          // const customerID = 5; //TODO 需確認是否有取到
+
           const estimatedMonthlyAmount = document.getElementById(
             "estimatedMonthlyAmount"
           ).value;
-          const frontIdCardImg = ""; //TODO 需確認上傳路徑
+          const frontIdCardImg = "frontIdCardImg"; //TODO 需確認上傳路徑
           const industryType = document.getElementById("industryType").value;
           const jobTitle = document.getElementById("jobTitle").value;
           const nameEn = document.getElementById("nameEn").value;
           const nameZh = document.getElementById("nameZh").value;
           const nationId = document.getElementById("nationId").value;
-          const referrerUid = Number(
-            document.getElementById("referrerUid").value
-          );
+
+          let referrerUid;
+          if (document.getElementById("referrerUid").value) {
+            referrerUid = Number(document.getElementById("referrerUid").value);
+          }
+
           const registrationPurpose = document.getElementById(
             "registrationPurpose"
           ).value;
@@ -1083,15 +1088,15 @@
           // 檢查所有必填欄位
           const fields = [
             "annualIncome",
-            "backIdCardImg",
+            // "backIdCardImg",
             "bankAccount",
-            "bankBookImg",
+            // "bankBookImg",
             "bankName",
             "contractAddress",
             "country",
             "customerID",
             "estimatedMonthlyAmount",
-            "frontIdCardImg",
+            // "frontIdCardImg",
             "industryType",
             "jobTitle",
             "nameEn",
@@ -1105,6 +1110,7 @@
           let isValid = true;
 
           for (const field of fields) {
+            console.log(field);
             const value = document.getElementById(field).value;
 
             if (value === null || value === undefined || value === "") {
@@ -1119,7 +1125,7 @@
           }
 
           //
-          // 整理數據
+          // 整理數據 bodyd
           const kycData = {
             annual_income: annualIncome,
             back_id_card_img: backIdCardImg,
@@ -1157,12 +1163,16 @@
           );
 
           // 檢查 Response 狀態
-          if (response.status === 201) {
-            // 成功的處理，可以是導向到其他頁面或顯示成功信息
-            console.log("KYC form successfully submitted.");
+          if (
+            response.status === 200 ||
+            response.status === 201 ||
+            response.status === 204
+          ) {
+            // 成功
+            alert("KYC 送出成功. 請等待審核");
           } else {
-            // 失敗的處理，例如顯示錯誤信息
-            console.log("Failed to submit KYC form.");
+            // 失敗
+            alert(" KYC 送出失敗.");
           }
         });
       });

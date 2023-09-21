@@ -776,16 +776,16 @@
       document.addEventListener("DOMContentLoaded", function () {
         const loginButton = document.getElementById("loginButton");
         const loginUsername = document.getElementById("loginUsername");
-        const loginEmail = document.getElementById("loginEmail");
+        // const loginEmail = document.getElementById("loginEmail");
         const loginPassword = document.getElementById("loginPassword");
 
         loginButton.addEventListener("click", async function () {
-          // 獲取用戶輸入
+          // 取得用戶輸入
           const username = loginUsername.value;
-          const email = loginEmail.value; // 如果API不需要Email，這行可以省略
+          // const email = loginEmail.value;
           const password = loginPassword.value;
 
-          // 組裝資料
+          // 組裝body
           const data = {
             username,
             password,
@@ -800,26 +800,31 @@
             body: JSON.stringify(data),
           });
 
-          // 检查 HTTP 响应状态码
-          if (response.status === 200) {
-            const responseData = await response.json();
+          const responseData = await response.json();
 
-            // 检查响应数据中的 status 字段
-            if (responseData.status === 0) {
-              const uid = responseData.message;
+          // 檢查 HTTP status
+          if (
+            response.status === 200 ||
+            response.status === 201 ||
+            response.status === 204
+          ) {
+            if (responseData.token) {
+              const uid = responseData.uid;
+              const token = responseData.token;
+              const expire = responseData.expire;
 
-              // 存储 UID 到 localStorage
+              // localStorage 存 UID
               localStorage.setItem("uid", uid);
+              localStorage.setItem("token", token);
+              localStorage.setItem("expire", expire);
 
-              // 或者存储 UID 到 cookie
-              // document.cookie = `uid=${uid}; path=/;`;
-
-              console.log("登入成功，UID 已存储。");
+              alert("登入成功，UID 已記錄。");
+              window.location.href = "registerKYC.html";
             } else {
-              console.log("登入失败，服务器返回非零状态。");
+              alert("登入失敗:，伺服器沒有返回token");
             }
           } else {
-            console.log(`登入失败，HTTP 状态码：${response.status}`);
+            alert(`登入失敗：${responseData.msg} (${response.status})`);
           }
         });
       });

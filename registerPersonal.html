@@ -688,7 +688,7 @@
         };
 
         const response = await fetch(
-          "http://127.0.0.1:8480//service/registry_account",
+          "http://127.0.0.1:8480/service/registry_account",
           {
             method: "POST",
             headers: {
@@ -700,6 +700,18 @@
 
         const responseData = await response.json();
         console.log(responseData);
+        if (
+          response.status === 200 ||
+          response.status === 201 ||
+          response.status === 204
+        ) {
+          alert("註冊成功！");
+          window.location.href = "login.html";
+        } else {
+          // const responseData = await response.json();
+          let showMsg = responseData.msg;
+          alert("註冊失敗： " + showMsg);
+        }
       }
 
       document.addEventListener("DOMContentLoaded", function () {
